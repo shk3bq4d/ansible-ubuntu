@@ -28,7 +28,7 @@
   file:
     path: /usr/share/chromium-browser/extensions
     state: directory
-  when: chromium.policy
+  when: chromium.extensions
 
 # See https://developer.chrome.com/extensions/external_extensions#preferences
 - name: Create Chromium JSON file to install extensions for all users
@@ -37,10 +37,13 @@
     dest: "/usr/share/chromium-browser/extensions/{{ item }}.json"
   with_items:
     - cjpalhdlnbpafiamejdnhcphjbkeiagm # ublock
-    - ajpgkpeckebdhofmmjfgcjjiiejpodla # Xmarks Bookmark Sync
-    - bcjindcccaagfpapjjmafapmmgkkhgoa # JSON Formatter
-    - miefikpgahefdbcgoiicnmpbeeomffld # Blackfire Companion
-    - fjnbnpbmkenffdnngjfgmeleoegfcffe # Stylish
+    - dhdgffkkebhmkfjojejmpbldmpobfkfo # tampermonkey
+    - dbepggeogbaibhgnhhndojpepiihcmeb # vimium
+    - njabckikapfpffapmjgojcnbfjonfjfg # cookies
+    # - ajpgkpeckebdhofmmjfgcjjiiejpodla # Xmarks Bookmark Sync
+    # - bcjindcccaagfpapjjmafapmmgkkhgoa # JSON Formatter
+    # - miefikpgahefdbcgoiicnmpbeeomffld # Blackfire Companion
+    # - fjnbnpbmkenffdnngjfgmeleoegfcffe # Stylish
     # - jbbplnpkjmmeebjpijfedlgcdilocofh # wave-evaluation-tool
     # - idgpnmonknjnojddfkpgkljpfnnfcklj # ModHeader
     # - jgbbilmfbammlbbhmmgaagdkbkepnijn # Cookie Inspector
